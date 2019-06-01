@@ -33,3 +33,11 @@ permissions:
               essentials.command.teleportall.use:
                 default: op
                 description: Allows using /tpall
+
+          essentials.command.teleporthere:
+            default: false
+            description: Allows using /tphere
+            children:
+              essentials.command.teleporthere.use:
+                default: op
+                description: Allows using /tphere
