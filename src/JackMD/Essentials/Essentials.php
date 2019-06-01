@@ -29,7 +29,7 @@ class Essentials extends PluginBase{
 	}
 
 	public function onEnable(): void{
-		if((bool) !$this->getConfig()->get("enable")){
+		if(!$this->getConfig()->get("enable")){
 			$this->getLogger()->warning(self::PREFIX . "Plugin disabled via config.");
 
 			return;
