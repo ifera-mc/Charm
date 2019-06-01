@@ -1,0 +1,27 @@
+name: Essentials
+main: JackMD\Essentials\Essentials
+author: JackMD
+api: [3.0.0]
+version: 1.0.0
+
+permissions:
+  essentials:
+    default: false
+    description: Access to all essentials commands and features.
+    children:
+      essentials.command:
+        default: false
+        description: Access to all essentials commands.
+        children:
+          essentials.command.gamemode:
+            default: false
+            description: Allows using /gamemode command.
+            children:
+              essentials.command.gamemode.use:
+                default: op
+              essentials.command.gamemode.self:
+                default: op
+                description: Allows sender to change their gamemode.
+              essentials.command.gamemode.target:
+                default: op
+                description: Allows sender to change another players gamemode.
