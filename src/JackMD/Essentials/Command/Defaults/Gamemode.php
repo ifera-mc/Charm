@@ -82,7 +82,7 @@ class Gamemode extends BaseCommand{
 		$gamemode = Server::getGamemodeFromString((string) $args[0]);
 
 		if($gamemode === -1){
-			$this->sendError($sender, "Gamemode {$args[0]} not found.");
+			$this->sendError($sender, "Gamemode §5{$args[0]} §cnot found.");
 
 			return;
 		}
@@ -95,7 +95,7 @@ class Gamemode extends BaseCommand{
 			$target = $this->getPlugin()->getServer()->getPlayer($targetName);
 
 			if(!PlayerUtils::isOnline($target)){
-				$this->sendError($sender, "Player with the name $targetName is not online or doesn't exist.");
+				$this->sendError($sender, "Player with the name §4$targetName §cis not online or doesn't exist.");
 
 				return;
 			}
