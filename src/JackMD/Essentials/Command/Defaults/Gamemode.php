@@ -13,6 +13,11 @@ use function strtolower;
 
 class Gamemode extends BaseCommand{
 
+	/**
+	 * Gamemode constructor.
+	 *
+	 * @param Essentials $plugin
+	 */
 	public function __construct(Essentials $plugin){
 		parent::__construct(
 			$plugin,
@@ -40,6 +45,11 @@ class Gamemode extends BaseCommand{
 		);
 	}
 
+	/**
+	 * @param CommandSender $sender
+	 * @param string        $label
+	 * @param array         $args
+	 */
 	public function onCommand(CommandSender $sender, string $label, array $args): void{
 		$label = strtolower($label);
 
