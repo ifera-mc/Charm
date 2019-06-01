@@ -8,13 +8,14 @@ use JackMD\Charm\Command\BaseCommand;
 use JackMD\Charm\Utils\PlayerUtils;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
-use pocketmine\level\particle\HappyVillagerParticle;
+use pocketmine\event\entity\EntityRegainHealthEvent;
+use pocketmine\level\particle\HeartParticle;
 use function strtolower;
 
-class Feed extends BaseCommand{
+class Heal extends BaseCommand{
 
 	/**
-	 * Feed constructor.
+	 * Heal constructor.
 	 *
 	 * @param Charm $plugin
 	 */
@@ -22,10 +23,10 @@ class Feed extends BaseCommand{
 		parent::__construct(
 			$plugin,
 
-			"feed",
-			"charm.command.feed.use",
-			"Feed yourself or another player.",
-			"/feed [string:player]"
+			"heal",
+			"charm.command.heal.use",
+			"Heal yourself or another player.",
+			"/heal [string:player]"
 		);
 	}
 
@@ -49,27 +50,27 @@ class Feed extends BaseCommand{
 		}
 
 		if($target instanceof ConsoleCommandSender){
-			$this->sendError($sender, "Please provide a player to feed.");
+			$this->sendError($sender, "Please provide a player to heal.");
 			$this->sendError($sender, "Usage: " . $this->getUsage());
 
 			return;
 		}
 
 		if($target === $sender){
-			if(!$this->hasPermission($sender, "charm.command.feed.self")){
+			if(!$this->hasPermission($sender, "charm.command.heal.self")){
 				return;
 			}
 		}else{
-			if(!$this->hasPermission($sender, "charm.command.feed.other")){
+			if(!$this->hasPermission($sender, "charm.command.heal.other")){
 				return;
 			}
 
-			$this->sendMessage($sender, "Player §2{$target->getName()} §ahas been fed.");
+			$this->sendMessage($sender, "Player §2{$target->getName()} §ahas been healed.");
 		}
 
-		$target->setFood(20);
-		$target->getLevel()->addParticle(new HappyVillagerParticle($target->add(0, 2)));
+		$target->heal(new EntityRegainHealthEvent($target, $target->getMaxHealth() - $target->getHealth(), EntityRegainHealthEvent::CAUSE_CUSTOM));
+		$target->getLevel()->addParticle(new HeartParticle($target->add(0, 2), 4));
 
-		$this->sendMessage($target, "You have been fed.");
+		$this->sendMessage($target, "You have been healed.");
 	}
 }
