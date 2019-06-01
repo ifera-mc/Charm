@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace JackMD\Essentials\Command;
 
 use JackMD\Essentials\Command\Defaults\Gamemode;
+use JackMD\Essentials\Command\Defaults\TeleportAll;
 use JackMD\Essentials\Essentials;
 use pocketmine\command\Command;
 use function in_array;
@@ -39,6 +40,7 @@ class CommandManager{
 		/** @var BaseCommand[] $commands */
 		$commands = [
 			new Gamemode($plugin),
+			new TeleportAll($plugin),
 		];
 
 		foreach($commands as $command){

@@ -25,3 +25,11 @@ permissions:
               essentials.command.gamemode.target:
                 default: op
                 description: Allows sender to change another players gamemode.
+
+          essentials.command.teleportall:
+            default: false
+            description: Allows using /tpall
+            children:
+              essentials.command.teleportall.use:
+                default: op
+                description: Allows using /tpall
