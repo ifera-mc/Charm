@@ -1,19 +1,19 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials\Command;
+namespace JackMD\Charm\Command;
 
-use JackMD\Essentials\Command\Defaults\Gamemode;
-use JackMD\Essentials\Command\Defaults\TeleportAll;
-use JackMD\Essentials\Command\Defaults\TeleportHere;
-use JackMD\Essentials\Essentials;
+use JackMD\Charm\Charm;
+use JackMD\Charm\Command\Defaults\Gamemode;
+use JackMD\Charm\Command\Defaults\TeleportAll;
+use JackMD\Charm\Command\Defaults\TeleportHere;
 use pocketmine\command\Command;
 use function in_array;
 use function is_null;
 
 class CommandManager{
 
-	/** @var Essentials */
+	/** @var Charm */
 	private $plugin;
 
 	/** @var array */
@@ -24,9 +24,9 @@ class CommandManager{
 	/**
 	 * CommandManager constructor.
 	 *
-	 * @param Essentials $plugin
+	 * @param Charm $plugin
 	 */
-	public function __construct(Essentials $plugin){
+	public function __construct(Charm $plugin){
 		$this->plugin = $plugin;
 
 		$this->registerAll();
@@ -65,8 +65,8 @@ class CommandManager{
 			$this->unregisterCommand($commandName);
 		}
 
-		$plugin->getServer()->getCommandMap()->register("essentials", $command);
-		$plugin->getLogger()->debug(Essentials::PREFIX . "§7Registered Command: §6$commandName");
+		$plugin->getServer()->getCommandMap()->register("charm", $command);
+		$plugin->getLogger()->debug(Charm::PREFIX . "§7Registered Command: §6$commandName");
 	}
 
 	/**

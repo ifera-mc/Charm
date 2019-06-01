@@ -1,11 +1,11 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials\Command\Defaults;
+namespace JackMD\Charm\Command\Defaults;
 
-use JackMD\Essentials\Command\BaseCommand;
-use JackMD\Essentials\Essentials;
-use JackMD\Essentials\Utils\PlayerUtils;
+use JackMD\Charm\Charm;
+use JackMD\Charm\Command\BaseCommand;
+use JackMD\Charm\Utils\PlayerUtils;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
 use function strtolower;
@@ -15,14 +15,14 @@ class TeleportHere extends BaseCommand{
 	/**
 	 * TeleportHere constructor.
 	 *
-	 * @param Essentials $plugin
+	 * @param Charm $plugin
 	 */
-	public function __construct(Essentials $plugin){
+	public function __construct(Charm $plugin){
 		parent::__construct(
 			$plugin,
 
 			"tphere",
-			"essentials.command.teleporthere.use",
+			"charm.command.teleporthere.use",
 			"Teleport an online player to yourself or to another player.",
 			"/tphere <string:player> <string:target>",
 			[

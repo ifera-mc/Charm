@@ -1,11 +1,11 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials\Command\Defaults;
+namespace JackMD\Charm\Command\Defaults;
 
-use JackMD\Essentials\Command\BaseCommand;
-use JackMD\Essentials\Essentials;
-use JackMD\Essentials\Utils\PlayerUtils;
+use JackMD\Charm\Charm;
+use JackMD\Charm\Command\BaseCommand;
+use JackMD\Charm\Utils\PlayerUtils;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
 use function count;
@@ -16,14 +16,14 @@ class TeleportAll extends BaseCommand{
 	/**
 	 * TeleportAll constructor.
 	 *
-	 * @param Essentials $plugin
+	 * @param Charm $plugin
 	 */
-	public function __construct(Essentials $plugin){
+	public function __construct(Charm $plugin){
 		parent::__construct(
 			$plugin,
 
 			"tpall",
-			"essentials.command.teleportall.use",
+			"charm.command.teleportall.use",
 			"Teleport every online player to your position or to some other player.",
 			"/tpall [string:player]",
 			[

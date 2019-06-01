@@ -1,11 +1,11 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials\Command\Defaults;
+namespace JackMD\Charm\Command\Defaults;
 
-use JackMD\Essentials\Command\BaseCommand;
-use JackMD\Essentials\Essentials;
-use JackMD\Essentials\Utils\PlayerUtils;
+use JackMD\Charm\Charm;
+use JackMD\Charm\Command\BaseCommand;
+use JackMD\Charm\Utils\PlayerUtils;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\Server;
@@ -16,14 +16,14 @@ class Gamemode extends BaseCommand{
 	/**
 	 * Gamemode constructor.
 	 *
-	 * @param Essentials $plugin
+	 * @param Charm $plugin
 	 */
-	public function __construct(Essentials $plugin){
+	public function __construct(Charm $plugin){
 		parent::__construct(
 			$plugin,
 
 			"gamemode",
-			"essentials.command.gamemode.use",
+			"charm.command.gamemode.use",
 			"Change your gamemode.",
 			"/gamemode <type:gamemode> [string:player]",
 			[
@@ -124,11 +124,11 @@ class Gamemode extends BaseCommand{
 		}
 
 		if($target === $sender){
-			if(!$this->hasPermission($sender, "essentials.command.gamemode.self")){
+			if(!$this->hasPermission($sender, "Charm.command.gamemode.self")){
 				return;
 			}
 		}else{
-			if(!$this->hasPermission($sender, "essentials.command.gamemode.target")){
+			if(!$this->hasPermission($sender, "Charm.command.gamemode.target")){
 				return;
 			}
 

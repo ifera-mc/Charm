@@ -1,43 +1,43 @@
-name: Essentials
-main: JackMD\Essentials\Essentials
+name: Charm
+main: JackMD\Charm\Charm
 author: JackMD
 api: [3.0.0]
 version: 1.0.0
 
 permissions:
-  essentials:
+  charm:
     default: false
-    description: Access to all essentials commands and features.
+    description: Access to all charm commands and features.
     children:
-      essentials.command:
+      charm.command:
         default: false
-        description: Access to all essentials commands.
+        description: Access to all charm commands.
         children:
-          essentials.command.gamemode:
+          charm.command.gamemode:
             default: false
             description: Allows using /gamemode command.
             children:
-              essentials.command.gamemode.use:
+              charm.command.gamemode.use:
                 default: op
-              essentials.command.gamemode.self:
+              charm.command.gamemode.self:
                 default: op
                 description: Allows sender to change their gamemode.
-              essentials.command.gamemode.target:
+              charm.command.gamemode.target:
                 default: op
                 description: Allows sender to change another players gamemode.
 
-          essentials.command.teleportall:
+          charm.command.teleportall:
             default: false
             description: Allows using /tpall
             children:
-              essentials.command.teleportall.use:
+              charm.command.teleportall.use:
                 default: op
                 description: Allows using /tpall
 
-          essentials.command.teleporthere:
+          charm.command.teleporthere:
             default: false
             description: Allows using /tphere
             children:
-              essentials.command.teleporthere.use:
+              charm.command.teleporthere.use:
                 default: op
                 description: Allows using /tphere

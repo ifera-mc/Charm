@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials\Utils;
+namespace JackMD\Charm\Utils;
 
 use pocketmine\Player;
 use function is_null;

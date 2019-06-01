@@ -1,2 +1,3 @@
-# Essentials
-Just a basic plugin having commands and some other useful stuff. This is not at all EssentialsPE.
+# Charm
+
+A PocketMine-MP plugin implementing some useful commands with a **kill switch** and some more features.

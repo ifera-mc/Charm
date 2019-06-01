@@ -1,13 +1,13 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials;
+namespace JackMD\Charm;
 
-use JackMD\Essentials\Command\CommandManager;
+use JackMD\Charm\Command\CommandManager;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
-class Essentials extends PluginBase{
+class Charm extends PluginBase{
 
 	/**
 	 * Don't change this please... It will hurt me :'(

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace JackMD\Essentials\Command;
+namespace JackMD\Charm\Command;
 
-use JackMD\Essentials\Essentials;
+use JackMD\Charm\Charm;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\command\ConsoleCommandSender;
@@ -11,20 +11,20 @@ use pocketmine\Server;
 
 abstract class BaseCommand extends Command{
 
-	/** @var Essentials */
+	/** @var Charm */
 	private $plugin;
 
 	/**
 	 * BaseCommand constructor.
 	 *
-	 * @param Essentials $plugin
+	 * @param Charm $plugin
 	 * @param string     $commandName
 	 * @param string     $permission
 	 * @param string     $description
 	 * @param string     $usageMessage
 	 * @param array      $aliases
 	 */
-	public function __construct(Essentials $plugin, string $commandName, string $permission, string $description = "", string $usageMessage = "", array $aliases = []){
+	public function __construct(Charm $plugin, string $commandName, string $permission, string $description = "", string $usageMessage = "", array $aliases = []){
 		parent::__construct($commandName, $description, $usageMessage, $aliases);
 
 		$this->setPermission($permission);
@@ -70,9 +70,9 @@ abstract class BaseCommand extends Command{
 	}
 
 	/**
-	 * @return Essentials
+	 * @return Charm
 	 */
-	public function getPlugin(): Essentials{
+	public function getPlugin(): Charm{
 		return $this->plugin;
 	}
 
@@ -88,7 +88,7 @@ abstract class BaseCommand extends Command{
 	 * @param string        $error
 	 */
 	public function sendError(CommandSender $sender, string $error): void{
-		$sender->sendMessage(Essentials::PREFIX . "§c$error");
+		$sender->sendMessage(Charm::PREFIX . "§c$error");
 	}
 
 	/**
@@ -96,6 +96,6 @@ abstract class BaseCommand extends Command{
 	 * @param string        $message
 	 */
 	public function sendMessage(CommandSender $sender, string $message): void{
-		$sender->sendMessage(Essentials::PREFIX . "§a$message");
+		$sender->sendMessage(Charm::PREFIX . "§a$message");
 	}
 }
