@@ -40,7 +40,7 @@ class CommandManager{
 		/** @var BaseCommand[] $commands */
 		$commands = [
 			new Gamemode($plugin),
-			new TeleportAll($plugin),
+			new TeleportAll($plugin)
 		];
 
 		foreach($commands as $command){
