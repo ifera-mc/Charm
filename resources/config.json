@@ -5,7 +5,6 @@
         "gamemode": true,
         "tpall": true,
         "tphere": true,
-        "back": true,
         "compass": true,
         "feed": true,
         "fly": true,
@@ -14,9 +13,7 @@
         "ping": true,
         "nick": true,
         "spawn": true,
-        "vanish": true,
         "top": true,
-        "sudo": true,
         "powertool": true,
         "clearinventory": true,
         "broadcast": true
