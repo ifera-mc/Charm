@@ -55,13 +55,21 @@ class Feed extends BaseCommand{
 			return;
 		}
 
+		if($target === $sender){
+			if(!$this->hasPermission($sender, "charm.command.feed.self")){
+				return;
+			}
+		}else{
+			if(!$this->hasPermission($sender, "charm.command.feed.other")){
+				return;
+			}
+
+			$this->sendMessage($sender, "Player §2{$target->getName()} §ahas been fed.");
+		}
+
 		$target->setFood(20);
 		$target->getLevel()->addParticle(new HappyVillagerParticle($target->add(0, 2)));
 
 		$this->sendMessage($target, "You have been fed.");
-
-		if($target !== $sender){
-			$this->sendMessage($sender, "Player §2{$target->getName()} §ahas been fed.");
-		}
 	}
 }
