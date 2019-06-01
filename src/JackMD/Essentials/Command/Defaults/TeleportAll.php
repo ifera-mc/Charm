@@ -7,25 +7,36 @@ use JackMD\Essentials\Command\BaseCommand;
 use JackMD\Essentials\Essentials;
 use JackMD\Essentials\Utils\PlayerUtils;
 use pocketmine\command\CommandSender;
+use pocketmine\command\ConsoleCommandSender;
 use function count;
 use function strtolower;
 
 class TeleportAll extends BaseCommand{
 
+	/**
+	 * TeleportAll constructor.
+	 *
+	 * @param Essentials $plugin
+	 */
 	public function __construct(Essentials $plugin){
 		parent::__construct(
 			$plugin,
 
-			"teleportall",
+			"tpall",
 			"essentials.command.teleportall.use",
 			"Teleport every online player to your position or to some other player.",
 			"/tpall [string:player]",
 			[
-				"tpall"
+				"teleportall"
 			]
 		);
 	}
 
+	/**
+	 * @param CommandSender $sender
+	 * @param string        $label
+	 * @param array         $args
+	 */
 	public function onCommand(CommandSender $sender, string $label, array $args): void{
 		$target = $sender;
 
@@ -38,6 +49,12 @@ class TeleportAll extends BaseCommand{
 
 				return;
 			}
+		}
+
+		if($target instanceof ConsoleCommandSender){
+			$this->sendError($sender, "Usage: " . $this->getUsage());
+
+			return;
 		}
 
 		$players = $this->getServer()->getOnlinePlayers();
