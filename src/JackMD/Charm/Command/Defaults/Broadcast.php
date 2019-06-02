@@ -11,7 +11,7 @@ use function implode;
 class Broadcast extends BaseCommand{
 
 	/**
-	 * Heal constructor.
+	 * Broadcast constructor.
 	 *
 	 * @param Charm $plugin
 	 */

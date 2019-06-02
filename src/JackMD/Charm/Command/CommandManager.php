@@ -4,13 +4,19 @@ declare(strict_types = 1);
 namespace JackMD\Charm\Command;
 
 use JackMD\Charm\Charm;
+use JackMD\Charm\Command\Defaults\Broadcast;
+use JackMD\Charm\Command\Defaults\ClearInventory;
 use JackMD\Charm\Command\Defaults\Compass;
 use JackMD\Charm\Command\Defaults\Feed;
 use JackMD\Charm\Command\Defaults\Fly;
 use JackMD\Charm\Command\Defaults\Gamemode;
 use JackMD\Charm\Command\Defaults\Heal;
+use JackMD\Charm\Command\Defaults\KickAll;
+use JackMD\Charm\Command\Defaults\Ping;
+use JackMD\Charm\Command\Defaults\Spawn;
 use JackMD\Charm\Command\Defaults\TeleportAll;
 use JackMD\Charm\Command\Defaults\TeleportHere;
+use JackMD\Charm\Command\Defaults\Top;
 use pocketmine\command\Command;
 use function in_array;
 use function is_null;
@@ -50,7 +56,13 @@ class CommandManager{
 			new Compass($plugin),
 			new Feed($plugin),
 			new Fly($plugin),
-			new Heal($plugin)
+			new Heal($plugin),
+			new KickAll($plugin),
+			new Ping($plugin),
+			new Spawn($plugin),
+			new Top($plugin),
+			new ClearInventory($plugin),
+			new Broadcast($plugin)
 		];
 
 		foreach($commands as $command){
