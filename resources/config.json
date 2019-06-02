@@ -11,7 +11,6 @@
         "heal": true,
         "kickall": true,
         "ping": true,
-        "nick": true,
         "spawn": true,
         "top": true,
         "clearinventory": true,

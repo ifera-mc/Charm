@@ -91,3 +91,75 @@ permissions:
               charm.command.heal.other:
                 default: op
                 description: Allows you to /heal other players
+
+          charm.command.kickall:
+            default: false
+            description: Allows using /kickall
+            children:
+              charm.command.kickall.use:
+                default: op
+                description: Allows using /kickall
+
+          charm.command.ping:
+            default: false
+            description: Allows using /ping
+            children:
+              charm.command.ping.use:
+                default: op
+                description: Allows using /ping
+              charm.command.ping.self:
+                default: op
+                description: Allows using /ping for yourself
+              charm.command.ping.other:
+                default: op
+                description: Allows you to /ping other players
+
+          charm.command.spawn:
+            default: false
+            description: Allows using /spawn
+            children:
+              charm.command.spawn.use:
+                default: true
+                description: Allows using /spawn
+              charm.command.spawn.self:
+                default: true
+                description: Allows using /spawn for yourself
+              charm.command.spawn.other:
+                default: op
+                description: Allows you to /spawn other players
+
+          charm.command.top:
+            default: false
+            description: Allows using /top
+            children:
+              charm.command.top.use:
+                default: op
+                description: Allows using /top
+              charm.command.top.self:
+                default: op
+                description: Allows using /top for yourself
+              charm.command.top.other:
+                default: op
+                description: Allows you to /top other players
+
+          charm.command.clearinventory:
+            default: false
+            description: Allows using /clearinventory
+            children:
+              charm.command.clearinventory.use:
+                default: op
+                description: Allows using /clearinventory
+              charm.command.clearinventory.self:
+                default: op
+                description: Allows using /clearinventory for yourself
+              charm.command.clearinventory.other:
+                default: op
+                description: Allows you to /clearinventory other players
+
+          charm.command.broadcast:
+            default: false
+            description: Allows using /broadcast
+            children:
+              charm.command.broadcast.use:
+                default: op
+                description: Allows using /broadcast

@@ -124,11 +124,11 @@ class Gamemode extends BaseCommand{
 		}
 
 		if($target === $sender){
-			if(!$this->hasPermission($sender, "Charm.command.gamemode.self")){
+			if(!$this->hasPermission($sender, "charm.command.gamemode.self")){
 				return;
 			}
 		}else{
-			if(!$this->hasPermission($sender, "Charm.command.gamemode.target")){
+			if(!$this->hasPermission($sender, "charm.command.gamemode.target")){
 				return;
 			}
 
