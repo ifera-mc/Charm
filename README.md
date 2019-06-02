@@ -34,4 +34,4 @@
 
 # Permissions
 
-- Refer to plugin.yml.
+- Refer to plugin.yml for list of permissions.
