@@ -1,10 +1,5 @@
 ![Charm Banner](https://github.com/JackMD/Charm/blob/master/meta/Charm.png)
 
-# Disclaimer
-
-> **I will only be adding stuff to this which I feel like adding so please don't**
-> **bother opening issues for feature requests. And/or adding a Pull Request for adding a feature.**
-
 # Charm
 
 | HitCount | License | Poggit | Release |
