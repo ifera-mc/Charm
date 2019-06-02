@@ -66,7 +66,8 @@ class Fly extends BaseCommand{
 			$this->sendMessage($sender, "Flying mode " . (!$target->getAllowFlight() ? "§2enabled" : "§cdisabled") . " §afor §2{$target->getName()}");
 		}
 
-		$this->sendMessage($target, "Flying mode " . (!$target->getAllowFlight() ? "§2enabled" : "§cdisabled"));
+		$this->sendMessage($target, "Flying mode " . (!$target->getAllowFlight() ? "§2enabled." : "§cdisabled."));
 		$target->setAllowFlight(!$target->getAllowFlight());
+		$target->setFlying(!$target->isFlying());
 	}
 }

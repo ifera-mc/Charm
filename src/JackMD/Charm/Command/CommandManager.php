@@ -4,7 +4,11 @@ declare(strict_types = 1);
 namespace JackMD\Charm\Command;
 
 use JackMD\Charm\Charm;
+use JackMD\Charm\Command\Defaults\Compass;
+use JackMD\Charm\Command\Defaults\Feed;
+use JackMD\Charm\Command\Defaults\Fly;
 use JackMD\Charm\Command\Defaults\Gamemode;
+use JackMD\Charm\Command\Defaults\Heal;
 use JackMD\Charm\Command\Defaults\TeleportAll;
 use JackMD\Charm\Command\Defaults\TeleportHere;
 use pocketmine\command\Command;
@@ -43,6 +47,10 @@ class CommandManager{
 			new Gamemode($plugin),
 			new TeleportAll($plugin),
 			new TeleportHere($plugin),
+			new Compass($plugin),
+			new Feed($plugin),
+			new Fly($plugin),
+			new Heal($plugin)
 		];
 
 		foreach($commands as $command){
