@@ -41,3 +41,53 @@ permissions:
               charm.command.teleporthere.use:
                 default: op
                 description: Allows using /tphere
+
+          charm.command.compass:
+            default: false
+            description: Allows using /compass
+            children:
+              charm.command.compass.use:
+                default: op
+                description: Allows using /compass
+
+          charm.command.feed:
+            default: false
+            description: Allows using /feed
+            children:
+              charm.command.feed.use:
+                default: op
+                description: Allows using /feed
+              charm.command.feed.self:
+                default: op
+                description: Allows using /feed for yourself
+              charm.command.feed.other:
+                default: op
+                description: Allows you to /feed other players
+
+          charm.command.fly:
+            default: false
+            description: Allows using /fly
+            children:
+              charm.command.fly.use:
+                default: op
+                description: Allows using /fly
+              charm.command.fly.self:
+                default: op
+                description: Allows using /fly for yourself
+              charm.command.fly.other:
+                default: op
+                description: Allows you to /fly other players
+
+          charm.command.heal:
+            default: false
+            description: Allows using /heal
+            children:
+              charm.command.heal.use:
+                default: op
+                description: Allows using /heal
+              charm.command.heal.self:
+                default: op
+                description: Allows using /heal for yourself
+              charm.command.heal.other:
+                default: op
+                description: Allows you to /heal other players
