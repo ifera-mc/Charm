@@ -3,7 +3,7 @@ branches:
 - master
 projects:
   Charm:
-    path: ""
+    icon: meta/Charm.png
     libs:
     - src: JackMD/UpdateNotifier/UpdateNotifier
       version: ^1.0.0
