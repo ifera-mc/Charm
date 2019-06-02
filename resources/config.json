@@ -1,5 +1,6 @@
 {
     "enable": true,
+    "config-version": 1,
 
     "commands": {
         "gamemode": true,

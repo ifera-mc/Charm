@@ -4,6 +4,9 @@ declare(strict_types = 1);
 namespace JackMD\Charm;
 
 use JackMD\Charm\Command\CommandManager;
+use JackMD\Charm\Utils\Utils;
+use JackMD\ConfigUpdater\ConfigUpdater;
+use JackMD\UpdateNotifier\UpdateNotifier;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
@@ -14,7 +17,10 @@ class Charm extends PluginBase{
 	 *
 	 * @var string
 	 */
-	public const PREFIX = "\xc2\xa7\x64\x45\x73\x73\x65\x6e\x74\x69\x61\x6c\x73\x20\xc2\xa7\x6c\xc2\xa7\x62\xc2\xbb\xc2\xa7\x72\x20";
+	public const PREFIX = "\xc2\xa7\x36\x43\x68\x61\x72\x6d\x20\xc2\xa7\x6c\xc2\xa7\x62\xc2\xbb\xc2\xa7\x72\x20";
+
+	/** @var int */
+	private const CONFIG_VERSION = 1;
 
 	/** @var Config */
 	private $config;
@@ -23,9 +29,16 @@ class Charm extends PluginBase{
 	private $commandManager;
 
 	public function onLoad(): void{
-		$this->saveResource("config.json");
+		Utils::checkVirions();
+		UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
+		$this->checkConfigs();
+	}
 
+	private function checkConfigs(): void{
+		$this->saveResource("config.json");
 		$this->config = new Config($this->getDataFolder() . "config.json", Config::JSON);
+
+		ConfigUpdater::checkUpdate($this, $this->config, "config-version", self::CONFIG_VERSION);
 	}
 
 	public function onEnable(): void{

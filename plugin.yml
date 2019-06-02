@@ -3,6 +3,13 @@ main: JackMD\Charm\Charm
 author: JackMD
 api: [3.0.0]
 version: 1.0.0
+load: POSTWORLD
+softdepend:
+- DEVirion
+
+virions:
+- ConfigUpdater
+- UpdateNotifier
 
 permissions:
   charm:
