@@ -1,0 +1,35 @@
+---
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: ubuntu:latest
+    steps:
+      - run:
+          name: Update & Install Packages
+          command: |
+            apt-get -y update && apt-get -y install wget
+      - checkout
+      - run:
+          name: Download & Install PHP Binary
+          command: |
+            wget https://jenkins.pmmp.io/job/PHP-7.2-Linux-x86_64/lastSuccessfulBuild/artifact/PHP_Linux-x86_64.tar.gz
+            tar -xvf PHP_Linux-x86_64.tar.gz
+      - run:
+          name: Build Plugin Phar
+          command: |
+            bin/php7/bin/php ./build.php
+      - run:
+          name: Install Required Virions
+          command: |
+            wget https://poggit.pmmp.io/r/52062/ConfigUpdater.phar
+            wget https://poggit.pmmp.io/r/47805/UpdateNotifier.phar
+      - run:
+          name: Inject Virions
+          command: |
+            bin/php7/bin/php ./ConfigUpdater.phar ./Charm.phar
+            bin/php7/bin/php ./UpdateNotifier.phar ./Charm.phar
+      - store_artifacts:
+          path: Charm.phar
+          destination: Charm.phar
+...
