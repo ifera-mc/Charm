@@ -8,7 +8,8 @@
 
 ### A PocketMine-MP plugin implementing some useful commands with a **kill switch** and some more features.
 
-> This plugin won't be released on poggit. So don't bother mentioning it!
+> This plugin won't be released on poggit. So please don't bother mentioning it! <br />
+> Instead you can download the plugin phar from Circle-CI.
 
 # Supported Commands:
 
