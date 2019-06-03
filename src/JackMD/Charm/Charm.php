@@ -28,20 +28,11 @@ class Charm extends PluginBase{
 	/** @var CommandManager */
 	private $commandManager;
 
-	public function onLoad(): void{
-		Utils::checkVirions();
+	public function onEnable(): void{
+                Utils::checkVirions();
 		UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
 		$this->checkConfigs();
-	}
 
-	private function checkConfigs(): void{
-		$this->saveResource("config.json");
-		$this->config = new Config($this->getDataFolder() . "config.json", Config::JSON);
-
-		ConfigUpdater::checkUpdate($this, $this->config, "config-version", self::CONFIG_VERSION);
-	}
-
-	public function onEnable(): void{
 		if(!$this->getConfig()->get("enable")){
 			$this->getLogger()->warning(self::PREFIX . "Plugin disabled via config.");
 
@@ -49,6 +40,13 @@ class Charm extends PluginBase{
 		}
 
 		$this->commandManager = new CommandManager($this);
+	}
+
+	private function checkConfigs(): void{
+		$this->saveResource("config.json");
+		$this->config = new Config($this->getDataFolder() . "config.json", Config::JSON);
+
+		ConfigUpdater::checkUpdate($this, $this->config, "config-version", self::CONFIG_VERSION);
 	}
 
 	/**
