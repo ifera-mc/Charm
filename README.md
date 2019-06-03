@@ -2,12 +2,13 @@
 
 # Charm
 
-| HitCount | License | Poggit | Release |
+| HitCount | License | Poggit |
 |:--:|:--:|:--:|:--:|
-|[![HitCount](http://hits.dwyl.io/JackMD/Charm.svg)](http://hits.dwyl.io/JackMD/Charm)|[![GitHub license](https://img.shields.io/github/license/JackMD/Charm.svg)](https://github.com/JackMD/Charm/blob/master/LICENSE)|[![Poggit-CI](https://poggit.pmmp.io/ci.shield/JackMD/Charm/Charm)](https://poggit.pmmp.io/ci/JackMD/Charm/Charm)|[![](https://poggit.pmmp.io/shield.state/Charm)](https://poggit.pmmp.io/p/Charm)|
-
+|[![HitCount](http://hits.dwyl.io/JackMD/Charm.svg)](http://hits.dwyl.io/JackMD/Charm)|[![GitHub license](https://img.shields.io/github/license/JackMD/Charm.svg)](https://github.com/JackMD/Charm/blob/master/LICENSE)
 
 ### A PocketMine-MP plugin implementing some useful commands with a **kill switch** and some more features.
+
+> This plugin won't be released on poggit. So don't bother mentioning it!
 
 # Supported Commands:
 
