@@ -14,7 +14,7 @@
 # Download
 
 - To download the prebuilt phar click [here](https://circleci.com/gh/JackMD/Charm).
-- Click on the latest successful build and then e.g.master#<number>
+- Click on the latest successful build and then e.g. `master#<number>`
 - Then on the next page click Artifacts.
 - Click on `Charm.phar` to download it.
 
