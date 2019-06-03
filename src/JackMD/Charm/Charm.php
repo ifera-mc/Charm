@@ -29,7 +29,7 @@ class Charm extends PluginBase{
 	private $commandManager;
 
 	public function onEnable(): void{
-                Utils::checkVirions();
+		Utils::checkVirions();
 		UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
 		$this->checkConfigs();
 
