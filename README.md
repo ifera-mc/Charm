@@ -2,8 +2,8 @@
 
 # Charm
 
-| HitCount | License | Circle CI |
-|:--:|:--:|:--:|
+| HitCount | License | Circle CI | Poggit |
+|:--:|:--:|:--:|:--:|
 |[![HitCount](http://hits.dwyl.io/JackMD/Charm.svg)](http://hits.dwyl.io/JackMD/Charm)|[![GitHub license](https://img.shields.io/github/license/JackMD/Charm.svg)](https://github.com/JackMD/Charm/blob/master/LICENSE)|[![CircleCI](https://circleci.com/gh/JackMD/Charm.svg?style=svg)](https://circleci.com/gh/JackMD/Charm)|[![Poggit-CI](https://poggit.pmmp.io/ci.shield/JackMD/Charm/Charm)](https://poggit.pmmp.io/ci/JackMD/Charm/Charm)|
 
 ### A PocketMine-MP plugin implementing some useful commands with a **kill switch** and some more features.
