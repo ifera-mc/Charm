@@ -4,12 +4,9 @@
 
 | HitCount | License | Circle CI |
 |:--:|:--:|:--:|
-|[![HitCount](http://hits.dwyl.io/JackMD/Charm.svg)](http://hits.dwyl.io/JackMD/Charm)|[![GitHub license](https://img.shields.io/github/license/JackMD/Charm.svg)](https://github.com/JackMD/Charm/blob/master/LICENSE)|[![CircleCI](https://circleci.com/gh/JackMD/Charm.svg?style=svg)](https://circleci.com/gh/JackMD/Charm)|
+|[![HitCount](http://hits.dwyl.io/JackMD/Charm.svg)](http://hits.dwyl.io/JackMD/Charm)|[![GitHub license](https://img.shields.io/github/license/JackMD/Charm.svg)](https://github.com/JackMD/Charm/blob/master/LICENSE)|[![CircleCI](https://circleci.com/gh/JackMD/Charm.svg?style=svg)](https://circleci.com/gh/JackMD/Charm)|[![Poggit-CI](https://poggit.pmmp.io/ci.shield/JackMD/Charm/Charm)](https://poggit.pmmp.io/ci/JackMD/Charm/Charm)|
 
 ### A PocketMine-MP plugin implementing some useful commands with a **kill switch** and some more features.
-
-> This plugin won't be released on poggit. So please don't bother mentioning it! <br />
-> Instead you can download the plugin phar from Circle-CI.
 
 # Download
 
@@ -17,6 +14,7 @@
 - Click on the latest successful build and then e.g. `master#<number>`
 - Then on the next page click Artifacts.
 - Click on `Charm.phar` to download it.
+- Alternatively use poggit to download the .phar.
 
 # Supported Commands:
 
