@@ -86,7 +86,7 @@ class CommandManager{
 		}
 
 		$plugin->getServer()->getCommandMap()->register("charm", $command);
-		$plugin->getLogger()->debug(Charm::PREFIX . "§7Registered Command: §6$commandName");
+		$plugin->getServer()->getLogger()->debug(Charm::PREFIX . "§7Registered Command: §6$commandName");
 	}
 
 	/**

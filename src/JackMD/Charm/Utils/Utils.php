@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace JackMD\Charm\Utils;
 
 use JackMD\ConfigUpdater\ConfigUpdater;
-use JackMD\UpdateNotifier\UpdateNotifier;
 use RuntimeException;
 use function class_exists;
 
@@ -15,7 +14,6 @@ class Utils{
 	 */
 	public static function checkVirions(): void{
 		$requiredVirions = [
-			UpdateNotifier::class,
 			ConfigUpdater::class
 		];
 

@@ -6,7 +6,6 @@ namespace JackMD\Charm;
 use JackMD\Charm\Command\CommandManager;
 use JackMD\Charm\Utils\Utils;
 use JackMD\ConfigUpdater\ConfigUpdater;
-use JackMD\UpdateNotifier\UpdateNotifier;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 
@@ -30,7 +29,6 @@ class Charm extends PluginBase{
 
 	public function onEnable(): void{
 		Utils::checkVirions();
-		UpdateNotifier::checkUpdate($this, $this->getDescription()->getName(), $this->getDescription()->getVersion());
 		$this->checkConfigs();
 
 		if(!$this->getConfig()->get("enable")){
